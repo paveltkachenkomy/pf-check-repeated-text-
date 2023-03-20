@@ -1,0 +1,32 @@
+{
+	"name": "pf-check-text",
+	"version": "1.0.0",
+	"description": "Проверка повторяющихся текстовок",
+	"main": "./build/index.js",
+	"scripts": {
+		"start": "node ./build/index.js",
+		"prestart": "npx tsc -p ./tsconfig.json"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/paveltkachenkomy/pf-check-repeated-texts.git"
+	},
+	"keywords": [
+		"PlanFix",
+		"Texts",
+		"Typescript"
+	],
+	"author": {
+		"name": "Pavel Tkachenko",
+		"email": "paveltkachenko.my@gmail.com"
+	},
+	"bugs": {
+		"url": "https://github.com/paveltkachenkomy/pf-check-repeated-texts/issues"
+	},
+	"homepage": "https://github.com/paveltkachenkomy/pf-check-repeated-texts#readme",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^18.15.3",
+		"typescript": "^5.0.2"
+	}
+}
