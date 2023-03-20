@@ -4,5 +4,7 @@
 **/package-lock.json
 **/build
 
+**/locale/**
 **/texts.txt
-!**/locale/
+
+!**/locale/.gitkeep
