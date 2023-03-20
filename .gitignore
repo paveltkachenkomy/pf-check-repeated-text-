@@ -4,6 +4,5 @@
 **/package-lock.json
 **/build
 
-**/locale/**
 **/texts.txt
-!**/locale/.placeholder
+!**/locale/
