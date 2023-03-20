@@ -1,16 +1,15 @@
 import fs from "fs";
 import path from "path";
 
-const inputFiles = path.resolve(__dirname, "../locale");
-const outputFile = path.resolve(__dirname, "../texts.txt");
+const inputFiles = process.argv[2]; 
+const outputFile = process.argv[3] || path.resolve(__dirname, "output", `${new Date().toJSON()}.txt`);
 
-const getArrayLangFiles = async (): Promise<string[]|void> => {
+const getArrayLangFiles = async (): Promise<string[]> => {
 	try {
-		const dirs: string[] = await fs.readdirSync(inputFiles);
-		return dirs;
+		const files: string[] = await fs.readdirSync(inputFiles);
+		return files;
 	}
 	catch (err: any) {
-		console.error("===> Error read dir \n", new Error(err));
 		throw err;
 	}
 }
@@ -24,7 +23,6 @@ const readFile = async (fileName: string): Promise<string[]>=> {
 		return result;
 	}
 	catch (err: any) {
-		console.error("===> Error read file\n", new Error(err));
 		throw err;
 	}
 }
@@ -34,7 +32,7 @@ const checRepeatedText = async () => {
 	try  {
 		const arrLangFiles = await getArrayLangFiles();
 		
-		if (arrLangFiles) {
+		if (arrLangFiles.length) {
 			let allText: string[] = [];
 			for (const fileName of arrLangFiles) {
 				const textInFile = await readFile(fileName);
@@ -49,21 +47,31 @@ const checRepeatedText = async () => {
 
 			const resultToFile = Array.from(new Set(notUniqueTextArr.sort())).join(`\n`);
 			
-			fs.writeFile(path.resolve(__dirname, "../texts.txt"), resultToFile,(err) => {
-				if (err) {
-					console.error("===> Error creating files", err)
-				} else {
-					console.info(`===> Check result in file ${outputFile}`);
-					console.info("===> END \n");
-				}
-			});
+			if (resultToFile.length) {
+				fs.writeFile(outputFile, resultToFile,(err) => {
+					if (err) {
+						throw err;
+					} else {
+						console.info(`===> Check result in file ${outputFile}`);
+					}
+				});
+			} else {
+				console.info("===> Rrepeated text not found")
+			}
+		} else {
+			console.info("===> Files not found")
 		}
 	}
 	catch (err: any) {
-		console.error("===> Error checkLang \n", new Error(err));
-		throw err;
+		if (err.message == `ENOENT: no such file or directory, scandir '${inputFiles}'` || err.message == `The "path" argument must be of type string or an instance of Buffer or URL. Received undefined`) {
+			console.error("===> Error: Incorect path input files")
+		} else {
+			throw err;
+		}
+	}
+	finally {
+		console.info("===> END \n");
 	}
 }
-
 
 checRepeatedText();

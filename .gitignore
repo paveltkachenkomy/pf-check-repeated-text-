@@ -2,9 +2,6 @@
 **/.vscode
 **/.idea
 **/package-lock.json
-**/build
 
 **/locale/**
-**/texts.txt
-
-!**/locale/.gitkeep
+**/output/**

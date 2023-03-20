@@ -2,9 +2,9 @@
 	"name": "pf-check-text",
 	"version": "1.0.0",
 	"description": "Проверка повторяющихся текстовок",
-	"main": "./build/index.js",
+	"main": "./index.js",
 	"scripts": {
-		"start": "node ./build/index.js",
+		"start": "node ./index.js",
 		"prestart": "npx tsc -p ./tsconfig.json"
 	},
 	"repository": {
