@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 const inputFiles = process.argv[2]; 
-const outputFile = process.argv[3] || path.resolve(__dirname, "output", `${new Date().toJSON()}.txt`);
+const outputFile = process.argv[3] || path.resolve(__dirname, "output", `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}.txt`);
 
 const getArrayLangFiles = async (): Promise<string[]> => {
 	try {
@@ -56,7 +56,7 @@ const checRepeatedText = async () => {
 					}
 				});
 			} else {
-				console.info("===> Rrepeated text not found")
+				console.info("===> Repeated text not found")
 			}
 		} else {
 			console.info("===> Files not found")
