@@ -1,5 +1,6 @@
 import fs from "fs";
 import readFile from "../utils/readFile";
+import utilConfig from "../config/utilConfig";
 
 const convertFileDataStringToArray = (data: string) => {
 	return data.split("\n").map((el: string) => {
@@ -7,9 +8,9 @@ const convertFileDataStringToArray = (data: string) => {
 	});
 }
 
-
 const RepeatedUtil = async (files: string[]) => {
 	let allText: string[] = [];
+	const outputFile = utilConfig.output as string;
 	for (const file of files) {
 		const textInFile = await readFile(file);
 		allText = allText.concat(textInFile);
@@ -28,11 +29,11 @@ const RepeatedUtil = async (files: string[]) => {
 			if (err) {
 				throw err;
 			} else {
-				console.info(`===> Check result in file ${outputFile}`);
+				console.info(`Check result in file ${outputFile}`);
 			}
 		});
 	} else {
-		console.info("===> Repeated text not found")
+		console.info("Repeated text not found")
 	}
 }
 
