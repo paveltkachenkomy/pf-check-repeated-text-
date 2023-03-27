@@ -10,4 +10,3 @@ const readDir = async(dir: string): Promise<Dirent[]> => {
 }
 
 export default readDir;
-

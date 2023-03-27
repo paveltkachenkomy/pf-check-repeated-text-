@@ -9,8 +9,9 @@ const convertFileDataStringToArray = (data: string) => {
 }
 
 const RepeatedUtil = async (files: string[]) => {
-	let allText: string[] = [];
 	const outputFile = utilConfig.output as string;
+
+	let allText: string[] = [];
 	for (const file of files) {
 		const textInFile = await readFile(file);
 		allText = allText.concat(textInFile);

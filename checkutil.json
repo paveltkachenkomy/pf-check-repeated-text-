@@ -1,6 +1,6 @@
 {
 	"process": "replace",
-	"include": ["D:/planfix/planfix-frontend", "D:/planfix/planfix-demon"],
+	"include": ["D:/planfix/planfix-frontend/locale/ru"],
 	"exclude": [],
 	"serach": [],
 	"output": "./output",
