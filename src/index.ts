@@ -1,7 +1,11 @@
 import path from "path";
-import fs from "fs";
-import readFile from "./utils/readFile";
-import readDir from "./utils/readDir";
-import utilConfig from "./config/utilConfig";
+import utilConfig, { ProcessUtil } from "./config/config";
+import ReplaceUtil from "./modules/replace";
 
-console.log(utilConfig.process);
+switch (utilConfig.process) {
+	case ProcessUtil.replace:
+		{
+		ReplaceUtil();
+		break;
+	}
+}

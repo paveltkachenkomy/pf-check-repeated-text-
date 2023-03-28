@@ -1,8 +1,8 @@
 {
 	"process": "replace",
-	"include": ["D:/planfix/planfix-frontend/locale/ru"],
-	"exclude": [],
-	"serach": [],
+	"include": ["D:/Development/pf-check-repeated-texts/test/"],
+	"exclude": [".git"],
+	"serach": ["test1", "test2", "test4"],
 	"output": "./output",
-	"replace": []
+	"replaced": "test99"
 }

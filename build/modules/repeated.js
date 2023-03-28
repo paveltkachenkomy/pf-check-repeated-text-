@@ -14,15 +14,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
 const readFile_1 = __importDefault(require("../utils/readFile"));
-const utilConfig_1 = __importDefault(require("../config/utilConfig"));
+const config_1 = __importDefault(require("../config/config"));
 const convertFileDataStringToArray = (data) => {
     return data.split("\n").map((el) => {
         return el.slice(el.indexOf("=") + 1).trim();
     });
 };
 const RepeatedUtil = (files) => __awaiter(void 0, void 0, void 0, function* () {
+    const outputFile = config_1.default.output;
     let allText = [];
-    const outputFile = utilConfig_1.default.output;
     for (const file of files) {
         const textInFile = yield (0, readFile_1.default)(file);
         allText = allText.concat(textInFile);

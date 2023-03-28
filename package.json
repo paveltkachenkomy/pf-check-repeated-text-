@@ -27,7 +27,11 @@
 	"homepage": "https://github.com/paveltkachenkomy/pf-check-repeated-texts#readme",
 	"license": "ISC",
 	"devDependencies": {
+		"@types/nconf": "^0.10.3",
 		"@types/node": "^18.15.3",
 		"typescript": "^5.0.2"
+	},
+	"dependencies": {
+		"nconf": "^0.12.0"
 	}
 }

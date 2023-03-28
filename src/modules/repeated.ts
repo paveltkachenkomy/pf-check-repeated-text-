@@ -1,6 +1,6 @@
 import fs from "fs";
 import readFile from "../utils/readFile";
-import utilConfig from "../config/utilConfig";
+import utilConfig from "../config/config";
 
 const convertFileDataStringToArray = (data: string) => {
 	return data.split("\n").map((el: string) => {

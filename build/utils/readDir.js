@@ -13,12 +13,54 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
-const readDir = (dir) => __awaiter(void 0, void 0, void 0, function* () {
+const path_1 = __importDefault(require("path"));
+const config_1 = __importDefault(require("../config/config"));
+// Собирает пути файлов
+const readDirForUtil = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        return yield fs_1.default.readdirSync(dir, { withFileTypes: true });
+        let resultFilesPath = [];
+        for (const include of config_1.default.include) {
+            const resultPaths = yield readDir(include);
+            resultFilesPath = resultFilesPath.concat(resultPaths);
+        }
+        return resultFilesPath;
     }
     catch (err) {
         throw err;
     }
 });
-exports.default = readDir;
+const readDir = (pathDir) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let result = [];
+        // Получаем спискок всего в дирректории 
+        const currentPaths = yield fs_1.default.readdirSync(pathDir, {
+            withFileTypes: true
+        });
+        // Файлы
+        const files = currentPaths.filter((el) => {
+            var _a;
+            return el.isFile() && !((_a = config_1.default.exclude) === null || _a === void 0 ? void 0 : _a.includes(el.name));
+        }).map((el) => {
+            return path_1.default.resolve(pathDir, el.name);
+        });
+        result = result.concat(files);
+        // Вложенные директории
+        const dirs = currentPaths.filter((el) => {
+            var _a;
+            return el.isDirectory() && !((_a = config_1.default.exclude) === null || _a === void 0 ? void 0 : _a.includes(el.name));
+        }).map((el) => {
+            return path_1.default.resolve(pathDir, el.name);
+        });
+        if (dirs.length) {
+            for (const subDirsPath of dirs) {
+                const subDirdata = yield readDir(subDirsPath);
+                result = result.concat(subDirdata);
+            }
+        }
+        return result;
+    }
+    catch (err) {
+        throw err;
+    }
+});
+exports.default = readDirForUtil;
