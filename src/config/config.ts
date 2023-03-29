@@ -37,4 +37,16 @@ class CFGController implements ICfg {
 
 const configUtil = new CFGController();
 
+export const checkCfg = () => {
+	switch (configUtil.process) {
+		case ProcessUtil.replace:
+			return configUtil.include && configUtil.serach && configUtil.replaced;
+		case ProcessUtil.repeated:
+			return configUtil.include && configUtil.output;
+		default:
+			console.info("Не правильно сконфигурированны настройки утилиты");
+			return false;
+	}
+}
+
 export default configUtil;
