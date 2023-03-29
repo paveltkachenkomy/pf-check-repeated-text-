@@ -1,7 +1,6 @@
-import path from "path";
 import utilConfig, { ProcessUtil } from "./config/config";
-import RepeatedUtil from "./modules/repeated";
-import ReplaceUtil from "./modules/replace";
+import RepeatedUtil from "./utils/repeated";
+import ReplaceUtil from "./utils/replace";
 
 switch (utilConfig.process) {
 	case ProcessUtil.replace: {

@@ -1,7 +1,7 @@
 import configUtil from "../config/config";
-import readDirForUtil from "../utils/readDir";
-import readFile from "../utils/readFile";
-import writeFile from "../utils/writeFile";
+import readDirForUtil from "../libs/readDir";
+import readFile from "../libs/readFile";
+import writeFile from "../libs/writeFile";
 
 const ReplaceUtil = async(): Promise<void> => {
 	readDirForUtil()

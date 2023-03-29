@@ -1,5 +1,5 @@
 import fs from "fs";
-import readFile from "../utils/readFile";
+import readFile from "../libs/readFile";
 import utilConfig from "../config/config";
 
 const convertFileDataStringToArray = (data: string) => {

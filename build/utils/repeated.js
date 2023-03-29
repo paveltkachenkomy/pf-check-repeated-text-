@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
-const readFile_1 = __importDefault(require("../utils/readFile"));
+const readFile_1 = __importDefault(require("../libs/readFile"));
 const config_1 = __importDefault(require("../config/config"));
 const convertFileDataStringToArray = (data) => {
     return data.split("\n").map((el) => {

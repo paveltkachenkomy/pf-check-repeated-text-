@@ -13,9 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const config_1 = __importDefault(require("../config/config"));
-const readDir_1 = __importDefault(require("../utils/readDir"));
-const readFile_1 = __importDefault(require("../utils/readFile"));
-const writeFile_1 = __importDefault(require("../utils/writeFile"));
+const readDir_1 = __importDefault(require("../libs/readDir"));
+const readFile_1 = __importDefault(require("../libs/readFile"));
+const writeFile_1 = __importDefault(require("../libs/writeFile"));
 const ReplaceUtil = () => __awaiter(void 0, void 0, void 0, function* () {
     (0, readDir_1.default)()
         .then((files) => __awaiter(void 0, void 0, void 0, function* () {

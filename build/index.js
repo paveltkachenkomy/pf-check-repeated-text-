@@ -27,7 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const config_1 = __importStar(require("./config/config"));
-const replace_1 = __importDefault(require("./modules/replace"));
+const replace_1 = __importDefault(require("./utils/replace"));
 switch (config_1.default.process) {
     case config_1.ProcessUtil.replace:
         {
