@@ -3,7 +3,7 @@
 Утилита для помощи в очистке текстовок от сопадающи текстов.
 
 ### Установка
-Для установки потребуется git, nodejs.
+Для установки потребуется [git](https://git-scm.com/), [nodejs](https://nodejs.org/).
 
 Клонируем саму утилиту  
 ```
@@ -45,5 +45,4 @@ cd ./pf-check-repeated-texts && npm install
 	"replaced": "",
 	"output": "./output/text.txt"
 }
-
 ```
