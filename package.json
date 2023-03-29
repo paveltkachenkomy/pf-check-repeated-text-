@@ -5,8 +5,8 @@
 	"main": "./build/index.js",
 	"scripts": {
 		"start": "node ./build/index.js",
-		"prestart": "npm run build",
-		"build": "npx tsc -p ./tsconfig.json"
+		"build": "npx tsc -p ./tsconfig.json",
+		"postinstall": "npm run build"
 	},
 	"repository": {
 		"type": "git",

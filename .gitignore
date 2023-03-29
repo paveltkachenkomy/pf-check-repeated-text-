@@ -2,6 +2,7 @@
 **/.vscode
 **/.idea
 **/package-lock.json
+**/build
 
 /output/**
 !/output/.gitkeep
