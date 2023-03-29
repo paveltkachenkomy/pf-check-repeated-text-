@@ -5,7 +5,8 @@ nconf.file(path.resolve(__dirname, "../../checkutil.json"));
 
 export enum ProcessUtil {
 	repeated = "repeated",
-	replace = "replace"
+	replace = "replace",
+	replace_most = "replace_most"
 }
 
 type ICfg = {

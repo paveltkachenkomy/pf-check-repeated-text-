@@ -14,7 +14,7 @@ const ReplaceUtil = async(): Promise<void> => {
 			for (const file of files) {
 				let dataText = await readFileForUtil(file);
 				const rgx = new RegExp(search.map((el) => `${el}\\b`).join('|'), "g");
-				if (dataText.match(rgx) !== null) {
+				if ((dataText.match(rgx) || []).length) {
 					const newDataText = dataText.replaceAll(rgx, replaceed);
 					await writeFileForUtil(file, newDataText);	
 				}
