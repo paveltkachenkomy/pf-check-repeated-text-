@@ -28,7 +28,7 @@ class CFGController implements ICfg {
 	constructor() {
 		this.process = nconf.get("process");
 		this.include = nconf.get("include");
-		this.exclude = nconf.get("exclude");
+		this.exclude = ([".git"]).concat(nconf.get("exclude"));
 		this.serach = nconf.get("serach");
 		this.replaced = nconf.get("replaced");
 		this.output = nconf.get("output");
