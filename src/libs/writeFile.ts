@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const writeFile = async(filePath: string, data: string): Promise<void> => {
+const writeFileForUtil = async(filePath: string, data: string): Promise<void> => {
 	try {
 		fs.writeFileSync(filePath, data);
 	}
@@ -9,4 +9,4 @@ const writeFile = async(filePath: string, data: string): Promise<void> => {
 	}
 }
 
-export default writeFile;
+export default writeFileForUtil;

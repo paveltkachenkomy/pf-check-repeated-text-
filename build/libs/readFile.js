@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
-const readFile = (file) => __awaiter(void 0, void 0, void 0, function* () {
+const readFileForUtil = (file) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         return yield fs_1.default.readFileSync(file, { encoding: "utf-8", flag: "r" });
     }
@@ -21,4 +21,4 @@ const readFile = (file) => __awaiter(void 0, void 0, void 0, function* () {
         throw err;
     }
 });
-exports.default = readFile;
+exports.default = readFileForUtil;

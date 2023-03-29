@@ -1,7 +1,7 @@
 import configUtil from "../config/config";
 import readDirForUtil from "../libs/readDir";
-import readFile from "../libs/readFile";
-import writeFile from "../libs/writeFile";
+import readFileForUtil from "../libs/readFile";
+import writeFileForUtil from "../libs/writeFile";
 
 const ReplaceUtil = async(): Promise<void> => {
 	try {
@@ -12,10 +12,10 @@ const ReplaceUtil = async(): Promise<void> => {
 			const replaceed = configUtil.replaced as string;
 
 			for (const file of files) {
-				let dataText = await readFile(file);
+				let dataText = await readFileForUtil(file);
 				const rgx = new RegExp(serach.map((el) => `${el}\\b`).join('|'), "g");
 				dataText = dataText.replaceAll(rgx, replaceed);
-				await writeFile(file, dataText);
+				await writeFileForUtil(file, dataText);
 			}
 		}
 	}

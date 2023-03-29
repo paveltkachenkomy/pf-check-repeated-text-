@@ -1,6 +1,6 @@
 import fs from "fs";
-import readFile from "../libs/readFile";
 import utilConfig from "../config/config";
+import readFileByUtil from "../libs/readFile";
 import readDirForUtil from "../libs/readDir";
 
 const convertFileDataStringToArray = (data: string) => {
@@ -18,7 +18,7 @@ const RepeatedUtil = async (): Promise<void> => {
 			
 			let allText: string[] = [];
 			for (const file of files) {
-				const textInFile = await readFile(file);
+				const textInFile = await readFileByUtil(file);
 				allText = allText.concat(convertFileDataStringToArray(textInFile));
 			}
 

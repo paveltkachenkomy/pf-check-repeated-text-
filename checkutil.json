@@ -1,6 +1,8 @@
 {
 	"process": "repeated",
-	"include": ["D:/planfix/planfix-frontend/locale/ru"],
+	"include": [
+		"D:/planfix/planfix-frontend"
+	],
 	"exclude": [
 		"wiki.ru.properties",
 		"android*",
