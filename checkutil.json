@@ -5,8 +5,8 @@
 		"wiki.ru.properties",
 		"android*",
 		"etc_reactnative_release*",
-		"etc_pfeditor*"
-
+		"etc_pfeditor*",
+		"etc_timer"
 	],
 	"serach": [],
 	"output": "./output/text.txt",
