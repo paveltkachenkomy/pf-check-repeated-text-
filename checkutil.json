@@ -1,8 +1,14 @@
 {
-	"process": "replace",
+	"process": "repeated",
 	"include": ["D:/planfix/planfix-frontend/locale/ru"],
-	"exclude": [],
+	"exclude": [
+		"wiki.ru.properties",
+		"android*",
+		"etc_reactnative_release*",
+		"etc_pfeditor*"
+
+	],
 	"serach": [],
-	"output": "./output",
+	"output": "./output/text.txt",
 	"replaced": ""
 }

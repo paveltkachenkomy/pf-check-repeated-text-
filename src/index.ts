@@ -9,7 +9,7 @@ if (checkCfg()) {
 			break;
 		};
 		case ProcessUtil.repeated: {
-			// RepeatedUtil();
+			RepeatedUtil();
 			break;
 		};
 	}

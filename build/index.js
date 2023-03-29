@@ -27,18 +27,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const config_1 = __importStar(require("./config/config"));
+const repeated_1 = __importDefault(require("./utils/repeated"));
 const replace_1 = __importDefault(require("./utils/replace"));
-switch (config_1.default.process) {
-    case config_1.ProcessUtil.replace:
-        {
-            (0, replace_1.default)();
-            break;
-        }
-        ;
-    case config_1.ProcessUtil.repeated:
-        {
-            // RepeatedUtil();
-            break;
-        }
-        ;
+if ((0, config_1.checkCfg)()) {
+    switch (config_1.default.process) {
+        case config_1.ProcessUtil.replace:
+            {
+                (0, replace_1.default)();
+                break;
+            }
+            ;
+        case config_1.ProcessUtil.repeated:
+            {
+                (0, repeated_1.default)();
+                break;
+            }
+            ;
+    }
 }

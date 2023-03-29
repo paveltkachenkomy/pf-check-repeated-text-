@@ -32,22 +32,19 @@ const readDirForUtil = () => __awaiter(void 0, void 0, void 0, function* () {
 const readDir = (pathDir) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let result = [];
-        // Получаем спискок всего в дирректории 
         const currentPaths = yield fs_1.default.readdirSync(pathDir, {
             withFileTypes: true
         });
-        // Файлы
         const files = currentPaths.filter((el) => {
             var _a;
-            return el.isFile() && !((_a = config_1.default.exclude) === null || _a === void 0 ? void 0 : _a.includes(el.name));
+            return el.isFile() && !((_a = config_1.default.exclude) === null || _a === void 0 ? void 0 : _a.find((e) => new RegExp(e).test(el.name)));
         }).map((el) => {
             return path_1.default.resolve(pathDir, el.name);
         });
         result = result.concat(files);
-        // Вложенные директории
         const dirs = currentPaths.filter((el) => {
             var _a;
-            return el.isDirectory() && !((_a = config_1.default.exclude) === null || _a === void 0 ? void 0 : _a.includes(el.name));
+            return el.isDirectory() && !((_a = config_1.default.exclude) === null || _a === void 0 ? void 0 : _a.find((e) => new RegExp(e).test(el.name)));
         }).map((el) => {
             return path_1.default.resolve(pathDir, el.name);
         });

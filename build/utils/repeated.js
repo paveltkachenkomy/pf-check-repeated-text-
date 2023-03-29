@@ -15,36 +15,45 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
 const readFile_1 = __importDefault(require("../libs/readFile"));
 const config_1 = __importDefault(require("../config/config"));
+const readDir_1 = __importDefault(require("../libs/readDir"));
 const convertFileDataStringToArray = (data) => {
     return data.split("\n").map((el) => {
         return el.slice(el.indexOf("=") + 1).trim();
     });
 };
-const RepeatedUtil = (files) => __awaiter(void 0, void 0, void 0, function* () {
-    const outputFile = config_1.default.output;
-    let allText = [];
-    for (const file of files) {
-        const textInFile = yield (0, readFile_1.default)(file);
-        allText = allText.concat(textInFile);
-    }
-    const notUniqueTextArr = allText.map((str, i) => {
-        if (allText.indexOf(str) !== -1 && allText.indexOf(str) !== i) {
-            return str;
-        }
-    });
-    const resultToFile = Array.from(new Set(notUniqueTextArr.sort())).join(`\n`);
-    if (resultToFile.length) {
-        fs_1.default.writeFile(outputFile, resultToFile, (err) => {
-            if (err) {
-                throw err;
+const RepeatedUtil = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const files = yield (0, readDir_1.default)();
+        if (files.length) {
+            const outputFile = config_1.default.output;
+            let allText = [];
+            for (const file of files) {
+                const textInFile = yield (0, readFile_1.default)(file);
+                allText = allText.concat(convertFileDataStringToArray(textInFile));
+            }
+            const notUniqueTextArr = allText.map((str, i) => {
+                if (allText.indexOf(str) !== -1 && allText.indexOf(str) !== i) {
+                    return str;
+                }
+            });
+            const resultToFile = Array.from(new Set(notUniqueTextArr.sort())).join(`\n`);
+            if (resultToFile.length) {
+                fs_1.default.writeFile(outputFile, resultToFile, (err) => {
+                    if (err) {
+                        throw err;
+                    }
+                    else {
+                        console.info(`Все повторяющиеся текста для проверки находятся в ${outputFile}`);
+                    }
+                });
             }
             else {
-                console.info(`Check result in file ${outputFile}`);
+                console.info("Повторяющихся текстовок не найдено");
             }
-        });
+        }
     }
-    else {
-        console.info("Repeated text not found");
+    catch (err) {
+        throw err;
     }
 });
 exports.default = RepeatedUtil;
