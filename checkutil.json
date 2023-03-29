@@ -1,7 +1,7 @@
 {
 	"process": "replace",
 	"include": ["D:/Development/pf-check-repeated-texts/test/"],
-	"exclude": [".git"],
+	"exclude": [".git", "test copy.js"],
 	"serach": ["test1", "test2", "test4"],
 	"output": "./output",
 	"replaced": "test99"

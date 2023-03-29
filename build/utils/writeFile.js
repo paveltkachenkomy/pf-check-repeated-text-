@@ -14,7 +14,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
 const writeFile = (filePath, data) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(filePath, data);
     try {
         fs_1.default.writeFileSync(filePath, data);
     }

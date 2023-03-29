@@ -34,4 +34,11 @@ switch (config_1.default.process) {
             (0, replace_1.default)();
             break;
         }
+        ;
+    case config_1.ProcessUtil.repeated:
+        {
+            // RepeatedUtil();
+            break;
+        }
+        ;
 }
