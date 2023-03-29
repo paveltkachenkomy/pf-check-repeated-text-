@@ -1,42 +1,49 @@
 ![Planfix logo](https://github.com/paveltkachenkomy/pf-check-repeated-texts/raw/master/Planfix-PNG-black.png "Planfix logo")
-## Проверка текстов на повторение
+## Описание
+Утилита для помощи в очистке текстовок от сопадающи текстов.
 
+### Установка
+Для установки потребуется git, nodejs.
 
-### Установка и запуск
-Для установки потребуется git, nodejs
-
-
-#### Установка
 Клонируем саму утилиту  
 ```
 git clone https://github.com/paveltkachenkomy/pf-check-repeated-texts.git
 ```
-
 
 Переходим в папку и устанавливаем компоненты  
 ```
 cd ./pf-check-repeated-texts && npm install
 ```
 
+### Использование
+Для использования нужно сконфигурировать утилиту в файле **checkutil.json**
 
-#### Использование
-checkutil.json
 ```
 {
-
-	"process": "",			// repeated - проверка повторяющихся текстовок
-							// replace - замена в проекте 
-	"include": [],			// Директории с проектом
+	"process": "",			// **repeated** - проверка повторяющихся текстовок или **replace** - замена в файлах проекта(ов) 
+	"include": [],			// Директории с файлами
 	"exclude": [],			// Директории и файлы для исключения (не обязателен)
-	"serach": [],			// Индексы текстовок для поиска по проетку (обязателен, для процесса search)
-	"output": "",			// Директория файла с результатами (для процесса repeated) 
-	"replace": ""			// Замещающий индекс текстовки (обязателен, для процесса replace)
+	"serach": [],			// Индексы текстовок для поиска по проетку (обязателен, для процесса replace)
+	"replace": "",			// Замещающий индекс текстовки (обязателен, для процесса replace)
+	"output": ""			// Директория файла с результатами (для процесса repeated)
 }
 ```
 
-Выполняем команду
+#### Пример для поиска совпадающих текстов в файлах текстовок
 ```
-npm start <input> <output>
-```
+{
+	"process": "repeated",
+	"include": ["D:/planfix/planfix-frontend/locale/ru"],
+	"exclude": [
+		"wiki.ru.properties",
+		"android*",
+		"etc_reactnative_release*",
+		"etc_pfeditor*",
+		"etc_timer"
+	],
+	"serach": [],
+	"replaced": "",
+	"output": "./output/text.txt"
+}
 
-Где ```<input>``` путь к директории с файлами текстовок и ```<output>``` директория куда будет выгружен файл результата
+```

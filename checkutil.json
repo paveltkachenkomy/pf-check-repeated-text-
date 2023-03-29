@@ -9,6 +9,7 @@
 		"etc_timer"
 	],
 	"serach": [],
-	"output": "./output/text.txt",
-	"replaced": ""
+	"replaced": "",
+	"output": "./output/text.txt"
+
 }
