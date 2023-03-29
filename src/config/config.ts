@@ -40,9 +40,9 @@ const configUtil = new CFGController();
 export const checkCfg = () => {
 	switch (configUtil.process) {
 		case ProcessUtil.replace:
-			return configUtil.include && configUtil.serach && configUtil.replaced;
+			return configUtil.include.length && configUtil.serach?.length && configUtil.replaced?.length;
 		case ProcessUtil.repeated:
-			return configUtil.include && configUtil.output;
+			return configUtil.include.length && configUtil.output?.length;
 		default:
 			console.info("Не правильно сконфигурированны настройки утилиты");
 			return false;
