@@ -23,9 +23,8 @@ const ReplaceUtil = () => __awaiter(void 0, void 0, void 0, function* () {
         if (files.length && ((_a = config_1.default.serach) === null || _a === void 0 ? void 0 : _a.length) && ((_b = config_1.default.replaced) === null || _b === void 0 ? void 0 : _b.length)) {
             for (const file of files) {
                 let dataText = yield (0, readFile_1.default)(file);
-                for (const searchIndexLang of config_1.default.serach) {
-                    dataText = dataText.replaceAll(searchIndexLang, config_1.default.replaced);
-                }
+                const rgx = new RegExp(config_1.default.serach.map((el) => `${el}\\b`).join('|'), "g");
+                dataText = dataText.replaceAll(rgx, config_1.default.replaced);
                 yield (0, writeFile_1.default)(file, dataText);
             }
         }
