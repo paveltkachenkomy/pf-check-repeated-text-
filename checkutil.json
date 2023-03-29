@@ -1,7 +1,7 @@
 {
-	"process": "repeated",
+	"process": "replace",
 	"include": [
-		"D:/planfix/planfix-frontend"
+		"D:/Development/pf-check-repeated-texts/test"
 	],
 	"exclude": [
 		"wiki.ru.properties",
@@ -10,8 +10,7 @@
 		"etc_pfeditor*",
 		"etc_timer"
 	],
-	"serach": [],
-	"replaced": "",
+	"serach": ["test1"],
+	"replaced": "test2",
 	"output": "./output/text.txt"
-
 }
