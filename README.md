@@ -29,7 +29,7 @@ cd ./pf-check-repeated-texts && npm install
 npm start
 ```
 
-### checkutil.json
+#### checkutil.json
 ```
 {
 	"process": "",			// **repeated** - проверка повторяющихся текстовок или **replace** - замена в файлах проекта(ов) 
