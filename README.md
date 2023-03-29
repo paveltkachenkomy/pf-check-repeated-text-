@@ -1,7 +1,7 @@
 ![Planfix logo](https://github.com/paveltkachenkomy/pf-check-repeated-texts/raw/master/Planfix-PNG-black.png "Planfix logo")
 
 ## Описание
-Утилита для помощи в очистке текстовок от сопадающи текстов.
+Утилита для помощи в очистке текстовок и файлов проекта от дубликатов текстов.
 
 ### Оглавление
  - [Установка](#установка)
