@@ -1,4 +1,5 @@
 ![Planfix logo](https://github.com/paveltkachenkomy/pf-check-repeated-texts/raw/master/Planfix-PNG-black.png "Planfix logo")
+
 ## Описание
 Утилита для помощи в очистке текстовок от сопадающи текстов.
 
@@ -21,6 +22,7 @@ cd ./pf-check-repeated-texts && npm install
 npm start
 ```
 
+### checkutil.json
 ```
 {
 	"process": "",			// **repeated** - проверка повторяющихся текстовок или **replace** - замена в файлах проекта(ов) 
