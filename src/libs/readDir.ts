@@ -27,14 +27,14 @@ const readDir = async(pathDir: string): Promise<string[]> => {
 		});
 		
 		const files = currentPaths.filter((el) => {
-			return el.isFile() && !utilConfig.exclude?.find((e) => new RegExp(e).test(el.name));
+			return el.isFile() && !utilConfig.exclude?.find((e) => new RegExp(`\\b${e}\\b`).test(el.name));
 		}).map((el) => {
 			return path.resolve(pathDir, el.name);
 		});
 		result = result.concat(files);
 
 		const dirs = currentPaths.filter((el) => {
-			return el.isDirectory() && !utilConfig.exclude?.find((e) => new RegExp(e).test(el.name))
+			return el.isDirectory() && !utilConfig.exclude?.find((e) => new RegExp(`\\b${e}\\b`).test(el.name))
 		}).map((el) => {
 			return path.resolve(pathDir, el.name)
 		});

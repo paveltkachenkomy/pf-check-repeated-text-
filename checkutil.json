@@ -1,16 +1,29 @@
 {
 	"process": "replacemost",
 	"include": [
-		"D:/Development/pf-check-repeated-texts/test"
+		"D:/planfix/planfix-frontend",
+		"D:/planfix/planfix-demon"
 	],
 	"exclude": [
-		"wiki.ru.properties",
-		"android*",
-		"etc_reactnative_release*",
-		"etc_pfeditor*",
-		"etc_timer"
+		".idea",
+		"Lang",
+		"dist",
+		"logs",
+		"img",
+		"fonts",
+		"css",
+		"less",
+		"sounds",
+		"_ts.js",
+		"lib",
+		"jslib-compiled.js",
+		"jslib-compiled.tsbuildinfo",
+		"require.js",
+		"templates.js",
+		"target",
+		"locale"
 	],
-	"serach": ["test2", "test3"],
+	"serach": ["client80", "contactTemplate29", "rememberpass11"],
 	"replaced": "",
 	"output": "./output/text.txt"
 }
