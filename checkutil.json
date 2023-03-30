@@ -1,5 +1,5 @@
 {
-	"process": "replace",
+	"process": "replacemost",
 	"include": [
 		"D:/Development/pf-check-repeated-texts/test"
 	],
@@ -10,7 +10,7 @@
 		"etc_pfeditor*",
 		"etc_timer"
 	],
-	"serach": ["test1"],
-	"replaced": "test2",
+	"serach": ["test2", "test3"],
+	"replaced": "",
 	"output": "./output/text.txt"
 }

@@ -13,7 +13,7 @@ if (checkCfg()) {
 			RepeatedUtil();
 			break;
 		};
-		case ProcessUtil.replace_most: {
+		case ProcessUtil.replacemost: {
 			ReplaceMostUtil();
 			break;
 		}

@@ -1,6 +1,7 @@
 import configUtil from "../config/config";
 import readDirForUtil from "../libs/readDir";
 import readFileForUtil from "../libs/readFile";
+import ReplaceUtil from "./replace";
 
 const ReplaceMostUtil = async (): Promise<void> => {
 	try {
@@ -24,12 +25,14 @@ const ReplaceMostUtil = async (): Promise<void> => {
 			}
 
 			const max = Math.max(...matchText.values());
-			/**
-			 * TODO
-			 * - получить по значению первый ключ (индекс текстовки);
-			 * - устанавливаем значения конфиги утилиты (в replaced ключ из предыдущего)
-			 * - и запустить ReplaceUtil
-			 */
+			for (const [key, val] of matchText.entries()) {
+				if (val == max) {
+					configUtil.replaced = key;
+					break;
+				}
+			}
+
+			ReplaceUtil();
 		}
 	} catch (err) {
 		throw err;

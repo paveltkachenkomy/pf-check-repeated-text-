@@ -6,7 +6,7 @@ nconf.file(path.resolve(__dirname, "../../checkutil.json"));
 export enum ProcessUtil {
 	repeated = "repeated",
 	replace = "replace",
-	replace_most = "replace_most"
+	replacemost = "replacemost"
 }
 
 type ICfg = {
@@ -40,13 +40,19 @@ const configUtil = new CFGController();
 
 export const checkCfg = () => {
 	switch (configUtil.process) {
-		case ProcessUtil.replace:
+		case ProcessUtil.replace: {
 			return configUtil.include.length && configUtil.serach?.length && configUtil.replaced?.length;
-		case ProcessUtil.repeated:
+		}
+		case ProcessUtil.repeated: {
 			return configUtil.include.length && configUtil.output?.length;
-		default:
+		}
+		case ProcessUtil.replacemost: {
+			return configUtil.include.length && configUtil.serach?.length
+		}
+		default: {
 			console.info("Не правильно сконфигурированны настройки утилиты");
 			return false;
+		}
 	}
 }
 
