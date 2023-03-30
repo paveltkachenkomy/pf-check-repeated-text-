@@ -19,6 +19,7 @@ const ReplaceUtil = async(): Promise<void> => {
 					await writeFileForUtil(file, newDataText);	
 				}
 			}
+			console.log(`${search.join(", ")} -> ${replaceed}`)
 		}
 	}
 	catch (err) {

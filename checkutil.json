@@ -23,7 +23,7 @@
 		"target",
 		"locale"
 	],
-	"serach": ["client80", "contactTemplate29", "rememberpass11"],
+	"serach": ["report188", "reportfieldtype2"],
 	"replaced": "",
 	"output": "./output/text.txt"
 }
