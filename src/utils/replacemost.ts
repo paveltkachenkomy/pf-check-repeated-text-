@@ -28,6 +28,7 @@ const ReplaceMostUtil = async (): Promise<void> => {
 			for (const [key, val] of matchText.entries()) {
 				if (val == max) {
 					configUtil.replaced = key;
+					configUtil.serach?.splice(configUtil.serach?.indexOf(key), 1);
 					break;
 				}
 			}
