@@ -23,7 +23,7 @@
 		"target",
 		"locale"
 	],
-	"serach": ["report188", "reportfieldtype2"],
+	"serach": ["report187", "reportfieldtype1"],
 	"replaced": "",
 	"output": "./output/text.txt"
 }

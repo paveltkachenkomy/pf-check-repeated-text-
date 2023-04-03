@@ -26,6 +26,7 @@ const readDir = async(pathDir: string): Promise<string[]> => {
 			withFileTypes: true
 		});
 		
+		// TODO - добавить обработку исключений полного пути
 		const files = currentPaths.filter((el) => {
 			return el.isFile() && !utilConfig.exclude?.find((e) => new RegExp(`\\b${e}\\b`).test(el.name));
 		}).map((el) => {
@@ -33,8 +34,9 @@ const readDir = async(pathDir: string): Promise<string[]> => {
 		});
 		result = result.concat(files);
 
+		// TODO - добавить обработку исключений полного пути
 		const dirs = currentPaths.filter((el) => {
-			return el.isDirectory() && !utilConfig.exclude?.find((e) => new RegExp(`\\b${e}\\b`).test(el.name))
+			return el.isDirectory() && !utilConfig.exclude?.find((e) => new RegExp(`\\b${e}\\b`).test(el.name));
 		}).map((el) => {
 			return path.resolve(pathDir, el.name)
 		});

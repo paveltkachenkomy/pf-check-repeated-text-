@@ -32,8 +32,12 @@ const ReplaceMostUtil = async (): Promise<void> => {
 					break;
 				}
 			}
-
-			ReplaceUtil();
+			console.info(matchText);
+			if (max > 0) {
+				ReplaceUtil();
+			} else {
+				console.info("Нет тексвтовок для замены");
+			}
 		}
 	} catch (err) {
 		throw err;
