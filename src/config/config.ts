@@ -6,7 +6,8 @@ nconf.file(path.resolve(__dirname, "../../checkutil.json"));
 export enum ProcessUtil {
 	repeated = "repeated",
 	replace = "replace",
-	replacemost = "replacemost"
+	replacemost = "replacemost",
+	search = "search",
 }
 
 type ICfg = {
@@ -47,7 +48,10 @@ export const checkCfg = () => {
 			return configUtil.include.length && configUtil.output?.length;
 		}
 		case ProcessUtil.replacemost: {
-			return configUtil.include.length && configUtil.serach?.length
+			return configUtil.include.length && configUtil.serach?.length;
+		}
+		case ProcessUtil.search: {
+			return configUtil.exclude?.length && configUtil.serach?.length;
 		}
 		default: {
 			console.info("Не правильно сконфигурированны настройки утилиты");

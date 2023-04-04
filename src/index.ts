@@ -2,6 +2,7 @@ import utilConfig, { checkCfg, ProcessUtil } from "./config/config";
 import RepeatedUtil from "./utils/repeated";
 import ReplaceUtil from "./utils/replace";
 import ReplaceMostUtil from "./utils/replacemost";
+import SearchUtil from "./utils/search";
 
 if (checkCfg()) {
 	switch (utilConfig.process) {
@@ -15,6 +16,10 @@ if (checkCfg()) {
 		};
 		case ProcessUtil.replacemost: {
 			ReplaceMostUtil();
+			break;
+		};
+		case ProcessUtil.search: {
+			SearchUtil();
 			break;
 		}
 	}
