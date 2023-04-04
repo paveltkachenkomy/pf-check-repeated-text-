@@ -23,7 +23,7 @@
 		"target",
 		"locale"
 	],
-	"serach": ["report187", "reportfieldtype1"],
+	"serach": ["analitic27", "jslib115", "planfixpage30", "planfixpage164", "taskViewTemplate41", "user58"],
 	"replaced": "",
 	"output": "./output/text.txt"
 }
