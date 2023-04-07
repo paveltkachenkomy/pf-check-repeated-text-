@@ -21,7 +21,7 @@
 		"templates.js",
 		"locale"
 	],
-	"serach": ["groupCardTemplate6", "usercardtemplate3"],
+	"serach": ["usertemplate144", "planfixpage64", "page42", "notifytype1", "jslib51", "changelogin5"],
 	"replaced": "",
 	"output": "./output/text.txt"
 }
