@@ -21,7 +21,7 @@
 		"templates.js",
 		"locale"
 	],
-	"serach": ["usertemplate144", "planfixpage64", "page42", "notifytype1", "jslib51", "changelogin5"],
+	"serach": ["task405", "planner2"],
 	"replaced": "",
 	"output": "./output/text.txt"
 }
