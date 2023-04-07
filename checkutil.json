@@ -21,7 +21,7 @@
 		"templates.js",
 		"locale"
 	],
-	"serach": ["task405", "planner2"],
+	"serach": ["report70", "report15"],
 	"replaced": "",
 	"output": "./output/text.txt"
 }
