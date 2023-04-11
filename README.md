@@ -8,7 +8,6 @@
  - [Использование](#использование)
 	- [Примеры](#примеры)
 		- [Поиск дубликатов](#поиска-дубликатов-текстов-в-файлах-текстовок)
-		- [Замена в файлах](#замена-текстовок-в-файлах-проекта)
 
 ### Установка
 Для установки потребуется [git](https://git-scm.com/), [nodejs](https://nodejs.org/).
@@ -49,23 +48,6 @@ npm start
 
 #### Примеры 
 ##### Поиска дубликатов текстов в файлах текстовок
-```
-{
-	"process": "repeated",
-	"include": ["D:/planfix/planfix-frontend/locale/ru"],
-	"exclude": [
-		"wiki.ru.properties",
-		"android*",
-		"etc_reactnative_release*",
-		"etc_pfeditor*",
-		"etc_timer"
-	],
-	"serach": [],
-	"replaced": "",
-	"output": "./output/text.txt"
-}
-```
-##### Замена текстовок в файлах проекта
 ```
 {
 	"process": "repeated",
