@@ -54,7 +54,7 @@ export const checkCfg = () => {
 			return configUtil.include?.length && configUtil.serach?.length;
 		}
 		default: {
-			console.info("Не правильно сконфигурированны настройки утилиты");
+			console.info("Неправильно сконфигурированны настройки утилиты");
 			return false;
 		}
 	}
