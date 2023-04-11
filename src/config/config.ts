@@ -51,7 +51,7 @@ export const checkCfg = () => {
 			return configUtil.include.length && configUtil.serach?.length;
 		}
 		case ProcessUtil.search: {
-			return configUtil.include?.length && configUtil.serach?.length;
+			return configUtil.include.length && configUtil.serach?.length;
 		}
 		default: {
 			console.info("Неправильно сконфигурированны настройки утилиты");
